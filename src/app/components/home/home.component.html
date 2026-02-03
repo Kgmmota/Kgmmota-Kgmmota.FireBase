@@ -40,7 +40,7 @@
               <div class="absolute right-0 mt-2 w-32 bg-white border rounded shadow-lg hidden group-focus-within:block">
                 <ul>
                   <li>
-                    <button class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                    <button (click)="deleteMovie(movie.id)" class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
                       <i class="fas fa-trash-alt mr-2"></i> Excluir
                     </button>
                   </li>
@@ -52,11 +52,12 @@
       
           <!-- Conteúdo do card -->
           <div class="photo">
-            <img [src]="movie.photoPath" alt="Card image">
+            <img *ngIf="movie.photo_path" [src]="movie.photo_path" alt="Card image">
+            <img *ngIf="!movie.photo_path" src="../../../assets/imgs/terror.jpg" alt="">
           </div>
 
           <div class="card-content">
-            <h2>{{ movie.title }}</h2>
+            <h2>{{ movie.name }}</h2>
             <p>{{ movie.analysis }}</p>
 
             <!-- Avaliação com Estrelas -->

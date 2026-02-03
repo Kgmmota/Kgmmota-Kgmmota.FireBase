@@ -15,6 +15,7 @@ import { HomeComponent } from './components/home/home.component';
 import { AddMovieComponent } from './shared/components/add-movie/add-movie.component';
 import { HeaderComponent } from './shared/components/header/header.component';
 import { FooterComponent } from './shared/components/footer/footer.component';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { FooterComponent } from './shared/components/footer/footer.component';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AngularFireStorageModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -43,6 +43,7 @@ export class AuthService {
   login(email:string,password:string){
     this.auth.signInWithEmailAndPassword(email,password).then((userCredential)=>{
       if(userCredential.user?.emailVerified){
+        console.log('Sucesso!')
         this.router.navigate(['/home']);
       }
     })
